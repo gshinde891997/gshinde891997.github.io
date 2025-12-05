@@ -1,0 +1,23 @@
+title: "Gajanan Shinde"
+description: "Embedded & Software Engineer — Embedded C | MCAL | Diagnostics | RTOS | CAN"
+url: "https://gshinde891997.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Kolkata
+markdown: kramdown
+permalink: /:title/
+
+theme: null
+
+paginate: 6
+
+author:
+  name: "Gajanan Shinde"
+  email: shinde8952@gmail.com
+  linkedin: "https://www.linkedin.com/in/gajanan-shinde-9a8521216"
+  avatar: "/assets/img/profile.jpg"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
