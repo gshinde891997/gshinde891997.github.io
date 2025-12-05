@@ -1,76 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | default: site.title }} — {{ site.title }}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+{% include head.html %}
 <body>
-  <div class="site-wrapper">
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-      <div class="author-card">
-        <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}">
-        <h1>{{ site.author.name }}</h1>
-        <p class="subtitle">Embedded & Software Engineer</p>
-        <p class="contact"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-      </div>
-
-      <nav class="side-nav">
-        <a href="/">Home</a>
-        <a href="/categories/">Categories</a>
-        <a href="/tags/">Tags</a>
-        <a href="/archives/">Archives</a>
-        <a href="/about/">About</a>
-      </nav>
-
-      <div class="side-footer">
-        <a href="{{ site.author.linkedin }}" target="_blank">LinkedIn</a>
-      </div>
+<div class="container">
+    <aside class="sidebar left">
+        {% include left_sidebar.html %}
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main class="main">
-
-      <header class="top">
-        <div class="top-left"><h2><a href="/">{{ site.title }}</a></h2></div>
-        <div class="top-right">
-          <input id="search" placeholder="Search..." oninput="filterPosts(this.value)">
-        </div>
-      </header>
-
-      <div class="content">
-        <div class="content-primary">
-          {{ content }}
-        </div>
-
-        <aside class="content-right">
-          {% include right_sidebar.html %}
-        </aside>
-      </div>
-
-      <footer class="footer">
-        <p>&copy; {{ "now" | date: "%Y" }} {{ site.author.name }} — Built with Jekyll</p>
-      </footer>
-
+        {{ content }}
     </main>
-  </div>
 
-  <script>
-    // simple search filtering
-    function filterPosts(q) {
-      q = q.trim().toLowerCase();
-      var cards = document.querySelectorAll('.post-card');
-      if (!cards) return;
-      cards.forEach(c => {
-        var t = c.innerText.toLowerCase();
-        c.style.display = t.includes(q) ? "" : "none";
-      });
-    }
-  </script>
+    <aside class="sidebar right">
+        {% include right_sidebar.html %}
+    </aside>
+</div>
 
 </body>
 </html>
