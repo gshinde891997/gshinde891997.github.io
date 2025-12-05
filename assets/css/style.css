@@ -152,3 +152,16 @@ body{
 /* Small tweaks */
 a{transition:all .16s ease}
 .post-card:hover, .widget:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,0.04)}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+.sidebar-profile {
+    text-align: center;
+    padding: 15px;
+}
